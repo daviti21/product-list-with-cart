@@ -1,0 +1,139 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color:#fcf8f5;
+     font-family: "Rad Hat Text", sans-serif;
+ }
+
+ .cont{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+ }
+
+ .dessert-cont, .order-cont{
+    width: 90%;
+ }
+
+ .des-box{
+    width: 100%;
+
+ }
+
+ .des-img{
+    width: 100%;
+    border-radius: 8px;
+ }
+ 
+ .des-txt{
+    color: #3e1d17;
+    
+ }
+ 
+ .add-txt{
+    color: #2b221f;
+ }
+
+ .addD{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 130px;
+    height: 35px;
+    border: 1px solid #918989;
+  
+    position: relative;
+    z-index: 1;
+   margin: -1.5rem auto 0;
+   background-color: #fcf8f5;
+   font-size: 0.9rem;
+   border-radius: 20px;
+    
+    
+ }
+
+ .change{
+      position: relative;
+    z-index: 1;
+   margin: -1.5rem auto 0;
+   width: 130px;
+    height: 35px;
+     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #c83b0e;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #fcf8f5;
+    display: none;
+ }
+
+ .add-img{
+    width: 18px;
+ }
+
+ .red-line{
+    border: 1px solid #c83b0e;
+ }
+
+ .decrease, .increase{
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    border:1px solid #fcf8f5;
+     background-color: inherit;
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+ }
+
+ .decrease{
+    background-image: url("icon-decrement-quantity.svg");
+ }
+
+ .increase{
+     background-image: url("icon-increment-quantity.svg")   
+ }
+
+ .name{
+    color: #a19490;
+    font-size: 0.8rem;
+ }
+
+ .full-name{
+    color:#0c0000;
+ }
+
+ .price{
+    color: #c26f63;
+    font-weight: 500;
+ }
+
+.name-box{
+line-height: 10px;
+}
+ 
+
+
+
+
+@media screen and (max-width: 768px) {
+    .dessert-cont, .order-cont{
+        width: 100%;
+        max-width: 340px;
+        margin: 1rem auto 0;
+    }
+
+    .des-txt{
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+}
