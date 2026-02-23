@@ -171,20 +171,41 @@
         </div>
         <div class="order-cont">
          <p class="cart-txt">Your Cart (<span id="cart-numb">0</span>)</p>
+         
          <div class="order-box">
-          <div class="order-img"></div>
+          
+            <div class="order-img"></div>
           <p class="order-txt">Your added items will appear here</p>
          </div>
+         <div class="order-space"> 
          <div class="tot-order">
             <p class="tot-txt">Order Total</p>
-            <p class="sum">$<span id="sum-num"></span></p>
+            <p class="sum">$0.00</p>
          </div>
          <div class="carbon">
             <img src="icon-carbon-neutral.svg" class="carb-img">
             <p class="carbon-txt">This is a <span class="carb-spn">carbon-neutral</span> delivery</p>
          </div>
-         <button type="submit" class="order-btn">Confirm Order</button>
+         <button type="button" class="order-btn">Confirm Order</button>
         </div>
+        </div>
+    </div>
+    <div class="orderpage">
+     <div class="list">
+        <div class="list-intr">
+            <img class="done" src="icon-order-confirmed.svg">
+            <p class="list-tit" style="color:#170906 ;">Order Confirmed</p>
+            <p class="list-txt">We have hope you enjoy food!</p>
+        </div>
+        <div class="list-pro">
+            <div class="products-list"></div>
+            <div class="list-totprice">
+                <p class="tot-txt">Order Total</p>
+                <p class="listtotal"></p>
+            </div>
+        </div>
+        <button type="button" class="neworderbtn">Start New Order</button>
+     </div> 
     </div>
     <script src="script.js"></script>
 </body>
