@@ -240,13 +240,18 @@ line-height: 10px;
     font-size: 0.85rem;
 }
 
-.sum, .list-tit{
+.sum, .list-tit, .listtotal{
    color: #170906;
    font-weight: bold;
    font-size: 1rem;
  
 }
 
+.shelfprice{
+   color: #170906;
+   font-size: 1.2rem;
+   
+}
 .order-space{
    width: 100%;
    display: flex;
@@ -265,21 +270,14 @@ line-height: 10px;
     align-items: center;
      
  }
-
- .leftDiv{
-     display: flex;
-    flex-direction: column;
-    width: 60%;
-    
-     
- }
+ 
 
  .rightDiv, .rightShelf{
    display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
-    width: 40%;
+    width: 1fr;
     
  }
  .down{
@@ -287,6 +285,7 @@ line-height: 10px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
  }
 
  .dlbtn{
@@ -300,17 +299,17 @@ line-height: 10px;
    background-color: transparent;
  }
 
- .leftShelf, .shelfdown{
+ .leftShelf{
    display: flex;
    flex-direction: row;
-   
+   width: 85%;
  }
 
- .pronum{
+ .pronum, .shelfnum{
    color: #c6796b;
  }
 
- .pricepro, .list-txt{
+ .pricepro, .list-txt, .shelfproductprice{
    color:#bab6b3 ;
  }
 
@@ -319,17 +318,21 @@ line-height: 10px;
  }
 
  .orderpage {
-   position: fixed  ;         
+   display: flex;     
+  justify-content: center;  
+  align-items: center;
+ position: fixed;     
   top: 0;                 
   left: 0;                 
   width: 100%;            
-  height: 100%;           
   background-color: rgba(0, 0, 0, 0.3);  
   z-index: 1000;           
   display: flex;     
   justify-content: center;  
   align-items: center;
   display: none;
+  min-height: 100vh;
+ 
 }
 
 .list{
@@ -337,11 +340,11 @@ line-height: 10px;
    display: flex;
    flex-direction: column;
    
-   position: relative;
+   position: fixed;
+   overflow-y: auto;
 }
 .shelfimg{
-    width: 75px;
-   height: 50px;
+
    background-repeat: no-repeat;
    background-size: cover;
    background-position: center;
@@ -357,7 +360,9 @@ line-height: 10px;
    background-color: #fcf8f5;
    display: flex;
    flex-direction: column;
-    
+    position: static;
+    overflow-y: auto;
+   
 }
 
 .tot-txt{
@@ -376,17 +381,23 @@ line-height: 10px;
 
 .shelfDiv{
    margin-top: 0.5rem;
-    
-   
+   height: max-content;
 }
 
 .shelfinf{
    display: flex;
    flex-direction: column;
-   justify-content: space-between;
-   border: 1px solid green;
+   height: max-content;
+   width: 70%;
 }
 
+ .shelfdown{
+   
+   display: flex;
+   flex-direction: row;
+   position: relative;
+  align-items: flex-start;
+ }
  
 
  
@@ -402,7 +413,9 @@ line-height: 10px;
         font-size: 1.5rem;
     }
 
-    
+    .shelfprice{
+      font-size: 0.9rem;
+    }
 
     .cart-txt{
    margin-left: 0.5rem;
@@ -428,16 +441,18 @@ line-height: 10px;
 .namepro{
    font-size: 0.9rem;
 }
-.sum{
+.sum, .listtotal{
    font-size: 1.2rem;
 }
 
 .list{
    max-width:350px;
-   height: max-content;
+    max-height: 600px;
    width: 100%;
    padding: 0.5rem 1rem;
-  
+  align-self: flex-end;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .list-pro{
@@ -456,19 +471,38 @@ line-height: 10px;
    margin-bottom: -0.6rem;
 }
 
-.shelfimg {
-     width: 55px;
-   height: 40px;
+ 
+.orderpage{
+   max-height: 400px;
 }
-
-.leftShelf{
-   height:40px;
-    
-}
+ 
 .shelfname{
-   font-size: 0.65rem;
+   font-size: 0.75rem;
 }
 
+.shelfnum, .shelfproductprice{
+   font-size: 0.8rem;
+
+}
+
+.shelfnum{
+   margin-right: 0.5rem;
+}
+
+.shelfimg{
+   height: 55px;
+   width: 55px;
+   margin: 0.6rem 0.5rem 0 0;
+   border-radius: 5px;
+}
+.products-list{
+max-height: 300px;
+overflow-y: auto;
+}
+  
+.down{
+   width: 200px;
+}
  
 }
 
@@ -493,10 +527,19 @@ line-height: 10px;
 
 .list{
    max-width:400px;
-   height: max-content;
+    max-height: 500px;
    width: 100%;
    padding: 1rem 1.3rem;
+   border-radius: 10px;
 }
+.products-list{
+max-height: 400px;
+overflow-y: auto;
+}
+
+.shelfprice{
+      font-size: 1rem;
+    }
 
 .list-pro{
    padding: 0.2rem 0.5rem;
@@ -516,12 +559,9 @@ line-height: 10px;
 
 .shelfimg{
      width: 65px;
-   height: 40px;
+   height: 100%;
 }
-.leftShelf{
-   height:40px;
-    
-}
+ 
 
 .order-cont{
    width: 100%;
@@ -577,11 +617,33 @@ line-height: 10px;
  margin: 1rem auto;
 }
 
-.sum{
+.sum, .listtotal{
    font-size: 1.4rem;
 }
 .shelfname{
    font-size: 0.8rem;
+}
+.shelfnum, .shelfproductprice{
+   font-size: 0.9rem;
+
+}
+
+.shelfnum{
+   margin-right: 0.5rem;
+}
+.shelfimg{
+   height: 70px;
+   width: 70px;
+   margin: 0.5rem 0.5rem 0 0;
+   border-radius: 5px;
+}
+.neworderbtn{
+   width: 100%;
+    height: 55px;
+}
+
+.down{
+   width: 185px;
 }
 }
 
@@ -654,14 +716,15 @@ line-height: 10px;
  font-size: 1.05rem;
  margin: 1.5rem auto;
 }
-.sum{
+.sum,.listtotal{
    font-size: 1.55rem;
 }
 .list{
    max-width:460px;
-   height: max-content;
+  max-height: 550px;
    width: 100%;
    padding: 1rem 1.3rem;
+   border-radius: 7px;
 }
 
 .list-pro{
@@ -685,7 +748,40 @@ line-height: 10px;
 }
 
 .leftShelf{
-   height:50px;
+   height: max-content;
+
     
 }
+
+.shelfnum, .shelfproductprice{
+   font-size: 0.9rem;
+
+}
+
+.shelfnum{
+   margin-right: 0.5rem;
+}
+
+.shelfimg{
+   height: 80px;
+   width: 80px;
+   margin: 0.5rem 0.5rem 0 0;
+   border-radius: 5px;
+}
+ 
+ 
+.products-list{
+max-height: 500px;
+overflow-y: auto;
+}
+
+.neworderbtn{
+   width: 100%;
+    height: 65px;
+}
+
+.down{
+   width: 220px;
+}
+ 
 }
