@@ -28,9 +28,8 @@ const decrease = change.querySelector(".decrease");
      decrease.textContent = "-"
      increase.textContent = "+"
      quantity.value = 1;
-     cartNumb.textContent = parseInt(quantity.value )   
-
-     
+   const currentCart = parseInt(cartNumb.textContent) || 0;
+cartNumb.textContent = currentCart + 1;
               
      const orderBox = document.querySelector(".order-box");
     orderBox.style.display = "none";
