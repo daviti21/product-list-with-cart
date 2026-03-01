@@ -645,6 +645,10 @@ overflow-y: auto;
 .down{
    width: 185px;
 }
+
+.neworderbtn{
+   margin-bottom: 50px;
+}
 }
 
 
@@ -778,7 +782,7 @@ overflow-y: auto;
 .neworderbtn{
    width: 100%;
     height: 53px;
-     
+   font-size: 1rem;
 }
 
 .down{
